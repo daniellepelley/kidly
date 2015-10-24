@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIDLY</title>
+    <meta name="description" content="Kidly.co.uk">
+    <meta name="author" content="Daniel Le Pelley">
+    <link rel="icon" href="https://www.kidly.co.uk/images/kidly_favicon.png">
+
+    @Styles.Render("~/Content/css")
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+        <script src="~/Scripts/angular.js"></script>
+
+
+</head>
+
+<body ng-app="app">
+    <div class="navbar navbar-fixed-top" style="z-index:1">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="/">
+                    <img src="~/Content/logo.png" width="200"/>
+                </a>
+            </div>
+            <a class="pull-right" href="~/basket">
+                <i class="fa fa-shopping-cart"></i>
+                View Basket
+            </a>
+        </div>
+
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <div id="footer">
+            <div id="footerInner">
+                <div class="main">
+                    <div class="logo">
+                        <img src="~/Content/k_logo.png" alt="Kidly" width="22" height="29" id="exifviewer-img-13" exifid="1391316580" oldsrc="https://www.kidly.co.uk/images/k_logo.png">
+                    </div>
+                    <div class="copyright">
+                        <p>©2015 Kidly Ltd</p>
+                        <p>All rights reserved</p>
+                    </div>
+                    <div class="moreInformation">
+                        <p><a href="/about/privacy">Privacy Policy</a></p>
+                        <p><a href="/about/terms">Terms &amp; Conditions</a></p>
+                    </div>
+                </div>
+                <div class="social">
+                    <p><a href="https://www.facebook.com/weareKIDLY/"><img src="~/Content/facebook.png" alt="Facebook" width="25" height="25" id="exifviewer-img-4" exifid="2139485647" oldsrc="https://www.kidly.co.uk/images/social/facebook.png"></a></p>
+                    <p><a href="https://instagram.com/weareKIDLY/"><img src="~/Content/instagram.png" alt="Instagram" width="25" height="25" id="exifviewer-img-3" exifid="-2029014056" oldsrc="https://www.kidly.co.uk/images/social/instagram.png"></a></p>
+                    <p><a href="https://www.pinterest.com/wearekidly/"><img src="~/Content/pinterest.png" alt="Pinterest" width="25" height="25" id="exifviewer-img-2" exifid="1296557513" oldsrc="https://www.kidly.co.uk/images/social/pinterest.png"></a></p>
+                    <p><a href="https://twitter.com/weareKIDLY/"><img src="~/Content/twitter.png" alt="Twitter" width="25" height="25" id="exifviewer-img-7" exifid="1125631724" oldsrc="https://www.kidly.co.uk/images/social/twitter.png"></a></p>
+                    <p><a href="mailto:hello@kidly.co.uk"><img src="~/Content/email.png" alt="Email" width="25" height="25" id="exifviewer-img-1" exifid="1305864492" oldsrc="https://www.kidly.co.uk/images/social/email.png"></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/app")
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

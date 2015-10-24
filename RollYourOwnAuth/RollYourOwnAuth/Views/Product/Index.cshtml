@@ -1,0 +1,87 @@
+﻿@model RollYourOwnAuth.Controllers.Product
+
+@{
+    ViewBag.Title = "title";
+}
+
+<div class="row" ng-controller="productCtrl" ng-cloak>
+    <div class="col-md-5">
+        <img style="max-width:100%" ng-src="{{getImage(lineItem.product)}}" />
+    </div>
+    <div class="col-md-7">
+        <div class="em-product-view-secondary em-product-shop">
+            <div class="product-shop fix_menu">
+                <div id="em-product-info-basic">
+                    <div class="product-name">
+                        <h1>{{lineItem.product.name}}</h1>
+                    </div>
+                    <hr/>
+                    <div class="price-box">
+                        <span class="regular-price">
+                             <span class="price" content="750">{{lineItem.product.price | currency:"£"}}</span> 
+                        </span>
+                    </div>
+
+                    <div class="em-review-email">
+                        <p class="no-rating">
+                            <a href="#" class="r-lnk link_review_form">Be the first to review this product</a>
+                        </p>
+                        <p class="email-friend">
+                            <a href="#">Email to a Friend</a>
+                        </p>
+                    </div>
+                    <div class="em-sku-availability">
+                        <p class="sku">SKU: {{id}}</p>
+                        <p class="availability in-stock">
+                            Availability: <span class="value">In stock</span>
+                        </p>
+                    </div>
+
+                    <div class="short-description">
+                        <h2>Quick Overview</h2>
+                        <div class="std">Morbi at ex at arcu posuere luctus. Maecenas eu nulla libero. Duis vulputate blandit hendrerit. Vestibulum mollis mattis justo nec auctor. Morbi non libero felis. Praesent porttitor blandit dui, nec mollis risus tempus ut. Fusce tincidunt</div>
+                    </div>
+                    <div>
+
+                        <p class="availability in-stock">
+                            Availability: <span>In stock</span>
+                        </p>
+
+                    </div>
+                    <div class="add-to-box">
+                        <div class="add-to-cart">
+                            <label for="qty">Qty:</label>
+
+                            <div>
+                                <quantity-selector item="lineItem" min="0" max="20"/>
+                            </div>
+
+                            <ul class="add-to-links">
+                                <li>
+                                    <a title="Add to Wishlist" href="#" class="link-wishlist">Add to Wishlist</a>
+                                </li>
+                                <li>
+                                    <span class="separator">|</span> <a href="#" title="Add to Compare" class="link-compare">Add to Compare</a>
+                                </li>
+                            </ul>
+                            <div class="button_addto">
+                                <button type="button" title="Buy Now" id="em-buy-now" class="button btn-em-buy-now" ng-click="buyNow()">
+                                    <span><span>Buy Now</span></span>
+                                </button>
+                                <button type="button" title="Add to Basket" id="product-addtocart-button" class="button btn-cart btn-cart-detail" ng-click="addToBasket()">
+                                    <span><span>Update Basket</span></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>
+                        <a ng-href="~/b/{{lineItem.product.brand}}">See more {{lineItem.product.brand}} products</a>
+                    </h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

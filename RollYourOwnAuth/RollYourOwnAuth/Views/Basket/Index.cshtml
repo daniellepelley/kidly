@@ -1,0 +1,148 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div ng-controller="basketCtrl" ng-cloak>
+    <table id="shopping-cart-table" class="data-table cart-table">
+        <thead>
+            <tr class="em-block-title">
+                <th>&nbsp;</th>
+                <th>
+                    <span class="nobr">Product Name</span>
+                </th>
+                <th></th>
+                <th class="a-center">
+                    <span class="nobr">Move to Wishlist</span>
+                </th>
+                <th class="a-center" colspan="1">
+                    <span class="nobr">Unit Price</span>
+                </th>
+                <th class="a-center">Qty</th>
+                <th class="a-center last" colspan="1">Subtotal</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="7" class="a-right">
+                    <button type="button" title="Continue Shopping" class="button btn-continue" ng-click="continueShopping()">
+                        <span><span>Continue Shopping</span></span>
+                    </button>
+                    <button type="submit" name="update_cart_action" value="update_qty" title="Update Shopping Cart" class="button btn-update" ng-click="updateBasket()">
+                        <span><span>Update Shopping Cart</span></span>
+                    </button>
+                    <button type="submit" name="update_cart_action" value="empty_cart" title="Clear Shopping Cart" class="button btn-empty" id="empty_cart_button" ng-click="clearBasket()">
+                        <span><span>Clear Shopping Cart</span></span>
+                    </button>
+                </td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr class="first odd" ng-repeat="lineItem in lineItems" ng-clock>
+                <td>
+                    <div class="cart-product">
+                        <div href="#" title="Remove item" class="btn-remove btn-remove2" ng-click="removeFromBasket(lineItem.product)">Remove item</div>
+                        <a ng-href="~/p/{{lineItem.product.brand}}/{{lineItem.product.ref}}/{{lineItem.product.id}}"
+                           title="{{lineItem.product.name}}" class="product-image">
+                            <img ng-src="{{getImage(lineItem.product)}}" width="100" alt="{{lineItem.product.name}}">
+                        </a>
+                    </div>
+                </td>
+                <td>
+                    <h2 class="product-name">
+                        <a ng-href="~/p/{{lineItem.product.brand}}/{{lineItem.product.ref}}/{{lineItem.product.id}}">{{lineItem.product.name}}</a>
+                    </h2>
+                    <p class="sku">Ba_7</p>
+                </td>
+                <td class="a-center">
+                    <a href="#" title="Edit item parameters">Edit</a>
+                </td>
+                <td class="a-center">
+                    <a href="#" class="link-wishlist use-ajax" title="Move">Move</a>
+                </td>
+                <td class="a-center">
+                    <span class="cart-price"> <span class="price">{{lineItem.product.price | currency:"£"}}</span> </span>
+                </td>
+                <td class="a-center">
+                    <quantity-selector item="lineItem" min="0" max="20"/>
+                </td>
+                <td class="a-center last">
+                    <span class="cart-price"> <span class="price">{{lineItem.product.price * lineItem.quantity | currency:"£"}}</span> </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="cart-collaterals row" ng-clock>
+        <div class="col-md-4">
+            <form id="discount-coupon-form" method="post">
+                <div class="discount em-box-cart">
+                    <h2>Discount Codes</h2>
+                    <div class="discount-form em-box">
+                        <div class="buttons-set" ng-repeat="discount in [.05, .08, .1, .15]">
+                            <button type="button" title="Apply Coupon" class="button" ng-click="setDiscount(discount)">
+                                <span>Apply {{discount * 100}}% Discount</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class=" col-md-4">
+            <div class="shipping em-box-cart">
+                <h2>Estimate Shipping and Tax</h2>
+                <div class="shipping-form em-box">
+                    <p>Postage and packaging</p>
+                    <strong><h4 class="price">{{postage | currency:"£"}}</h4></strong>
+                </div>
+            </div>
+        </div>
+        <div class="last totals col-md-4">
+            <div class="em-box-cart">
+                <h2>Order Total</h2>
+                <div class="em-box">
+                    <table id="shopping-cart-totals-table">
+                        <colgroup>
+                            <col>
+                            <col style="width: 1%;">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td style="" class="a-right" colspan="1">Subtotal</td>
+                                <td style="" class="a-right">
+                                    <span class="price">{{subTotal() | currency:"£"}}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="" class="a-right" colspan="1">Savings</td>
+                                <td style="" class="a-right">
+                                    <span class="price">{{subTotal() * discount | currency:"£"}}</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td style="" class="a-right" colspan="1">
+                                    <strong>Grand Total</strong>
+                                </td>
+                                <td style="" class="a-right">
+                                    <strong><span class="price">{{total() | currency:"£"}}</span></strong>
+                                </td>
+                            </tr>
+                        </tfoot>
+
+                    </table>
+                    <ul class="checkout-types">
+                        <li>
+                            <button type="button" title="Proceed to Checkout" class="button btn-proceed-checkout btn-checkout">
+                                <span><span>Proceed to Checkout</span></span>
+                            </button>
+                        </li>
+                        <li>
+                            <a href="checkout.html" title="Checkout with Multiple Addresses">Checkout with Multiple Addresses</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
