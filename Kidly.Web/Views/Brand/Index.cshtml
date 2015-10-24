@@ -1,0 +1,81 @@
+﻿@model Kidly.Web.Models.Brand
+
+@{
+    ViewBag.Title = "title";
+}
+
+<div ng-app="app" ng-controller="brandCtrl">
+    <div class="row" ng-cloak>
+        <div class="well">
+            <strong>{{brand.name}}</strong>
+
+            <p>{{brand.description}}</p>
+        </div>
+    </div>
+
+
+    <div class="row" ng-cloak>
+        <div class="col-md-12">
+
+            <div class="widget em-filterproducts-grid">
+                <div class="widget-products em-widget-products">
+                    <div class="products-grid owl-carousel owl-theme " style="opacity: 1; display: block;">
+                        <div class="owl-wrapper-outer">
+                            <div class="owl-wrapper" style="width: 2532px; left: 0; display: block; -webkit-transition: all 0 ease; transition: all 0 ease;" ng-repeat="product in brand.products">
+
+                                <div class="owl-item active" style="width: 211px">
+                                    <div class="item first" style="">
+                                        <div class="product-item">
+                                            <div class="product-shop-top">
+                                                <a href="#" title="{{product.name}}" class="product-image loading-process">
+                                                    <img class="em-alt-hover img-responsive em-img-lazy" ng-src="{{getAltHero(product)}} " width=" 250" height="250" alt=" baby dino baller graphic tee ">
+                                                    <img class="img-responsive em-img-lazy em-alt-org" ng-src="{{getHero(product)}}" width="250" height="250" alt=" baby dino baller graphic tee ">
+                                                </a>
+                                                <div class="em-element-display-hover bottom">
+                                                    <div class="em-btn-addto">
+                                                        <button type="button" title="Add to Cart" class="button btn-cart" ng-click="addToBasket(product)">
+                                                            <span><span>Add to Cart</span></span>
+                                                        </button>
+
+                                                        <ul class="add-to-links">
+                                                            <li>
+                                                                <a href="#252" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
+                                                            </li>
+                                                            <li>
+                                                                <span class="separator">|</span> <a href="#252" class="link-compare" title="Add to Compare">Add to Compare</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="quickshop-link-container">
+                                                        <a ng-href="~/p/{{product.brand}}/{{product.ref}}/{{product.id}}" class="quickshop-link" title="Quickshop">Quickshop</a>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.product-shop-top -->
+                                            <div class="product-shop">
+                                                <div class="f-fix">
+                                                    <!--product name-->
+                                                    <h3 class="product-name">
+                                                        <a ng-href="~/p/{{product.brand}}/{{product.ref}}/{{product.id}}" title="{{product.name}}">{{product.name}}</a>
+                                                    </h3>
+                                                    <div class="price-box">
+                                                        <span class="regular-price"><span class="medium-price">{{product.price | currency:"£"}}</span> </span>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
