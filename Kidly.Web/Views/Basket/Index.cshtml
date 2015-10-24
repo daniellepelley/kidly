@@ -74,18 +74,16 @@
 
     <div class="cart-collaterals row" ng-clock>
         <div class="col-md-4">
-            <form id="discount-coupon-form" method="post">
                 <div class="discount em-box-cart">
                     <h2>Discount Codes</h2>
                     <div class="discount-form em-box">
-                        <div class="buttons-set" ng-repeat="discount in [.05, .08, .1, .15]">
+                        <div class="buttons-set" ng-repeat="discount in [.05, .08, .1]">
                             <button type="button" title="Apply Coupon" class="button" ng-click="setDiscount(discount)">
                                 <span>Apply {{discount * 100}}% Discount</span>
                             </button>
                         </div>
                     </div>
                 </div>
-            </form>
         </div>
         <div class=" col-md-4">
             <div class="shipping em-box-cart">
@@ -99,7 +97,7 @@
         <div class="last totals col-md-4">
             <div class="em-box-cart">
                 <h2>Order Total</h2>
-                <div class="em-box">
+                <div class="em-box" >
                     <table id="shopping-cart-totals-table">
                         <colgroup>
                             <col>

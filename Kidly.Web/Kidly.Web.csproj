@@ -203,9 +203,6 @@
     <Content Include="Content\k_logo.png" />
     <Content Include="Content\logo.png" />
     <Content Include="Content\pinterest.png" />
-    <Content Include="Content\product1a.png" />
-    <Content Include="Content\product1b.png" />
-    <Content Include="Content\product1c.png" />
     <Content Include="Content\twitter.png" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
