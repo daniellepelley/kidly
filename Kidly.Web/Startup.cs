@@ -14,7 +14,7 @@ namespace Kidly.Web
             app.UseCanonicalUrls(new Dictionary<string, string>
             {
                 { "/home/", "/" },
-                { "/home/index", "/" },
+                { "/home/index/", "/" },
                 { "/default/", "/" },
                 { "/index/", "/"}
             });
