@@ -4,12 +4,13 @@
 
 <div class="row" ng-controller="productCtrl" ng-cloak>
     <div class="col-md-5">
-        <img style="max-width:100%" ng-src="{{getImage(lineItem.product)}}" />
+        <img style="max-width:100%" ng-src="{{getImage()}}" />
     </div>
     <div class="col-md-7">
         <div class="em-product-view-secondary em-product-shop">
             <div class="product-shop fix_menu">
                 <div id="em-product-info-basic">
+                    <img class="brand-logo" ng-src="{{getBrandLogo()}}" />
                     <div class="product-name">
                         <h1>{{lineItem.product.name}}</h1>
                     </div>

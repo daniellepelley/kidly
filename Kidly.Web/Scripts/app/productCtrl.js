@@ -5,9 +5,16 @@
         $scope.lineItem = response.data;
     });
 
-    $scope.getImage = function(product) {
-        if (product) {
-            return "http://s7ondemand6.scene7.com//is/image/MothercareASE/" + product.mcId + "_1?wid=1800";
+    $scope.getImage = function() {
+        if ($scope.lineItem) {
+            return "http://s7ondemand6.scene7.com//is/image/MothercareASE/" + $scope.lineItem.product.mcId + "_1?wid=1800";
+        }
+        return "";
+    };
+
+    $scope.getBrandLogo = function () {
+        if ($scope.lineItem) {
+            return "http://s7ondemand6.scene7.com//is/image/MothercareASE/" + $scope.lineItem.product.brand.logoId;
         }
         return "";
     };

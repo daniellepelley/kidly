@@ -3,10 +3,11 @@
 }
 
 <div ng-app="app" ng-controller="brandCtrl">
+
+    <img class="brand-logo" ng-src="{{getBrandLogo()}}" />
+
     <div class="row" ng-cloak>
         <div class="well">
-            <strong>{{brand.name}}</strong>
-
             <p>{{brand.description}}</p>
         </div>
     </div>
@@ -26,7 +27,7 @@
                                         <div class="product-item">
                                             <div class="product-shop-top">
                                                 <a href="#" title="{{product.name}}" class="product-image loading-process">
-                                                    <img class="em-alt-hover img-responsive em-img-lazy" ng-src="{{getAltHero(product)}} " width=" 250" height="250" alt=" baby dino baller graphic tee ">
+                                                    <img class="em-alt-hover img-responsive em-img-lazy" ng-src="{{getAltHero(product)}}" width=" 250" height="250" alt=" baby dino baller graphic tee ">
                                                     <img class="img-responsive em-img-lazy em-alt-org" ng-src="{{getHero(product)}}" width="250" height="250" alt=" baby dino baller graphic tee ">
                                                 </a>
                                                 <div class="em-element-display-hover bottom">
@@ -45,14 +46,14 @@
                                                         </ul>
                                                     </div>
                                                     <div class="quickshop-link-container">
-                                                        <a ng-href="~/p/{{product.brand}}/{{product.ref}}/{{product.id}}" class="quickshop-link" title="Quickshop">Quickshop</a>
+                                                        <a ng-href="~/p/{{brand.name}}/{{product.ref}}/{{product.id}}" class="quickshop-link" title="Quickshop">Quickshop</a>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="product-shop">
                                                 <div class="f-fix">                                                 
                                                     <h3 class="product-name">
-                                                        <a ng-href="~/p/{{product.brand}}/{{product.ref}}/{{product.id}}" title="{{product.name}}">{{product.name}}</a>
+                                                        <a ng-href="~/p/{{brand.name}}/{{product.ref}}/{{product.id}}" title="{{product.name}}">{{product.name}}</a>
                                                     </h3>
                                                 </div>
                                                 <div class="price-box bottom ">

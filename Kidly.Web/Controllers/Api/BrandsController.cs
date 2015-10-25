@@ -13,5 +13,16 @@ namespace Kidly.Web.Controllers.Api
             brand.Products = StaticData.Products.Where(x => x.BrandId == brand.Id).ToList();
             return brand;
         }
+
+        [HttpGet]
+        public Brand[] Get()
+        {
+            return StaticData.Brands.Select(x =>
+            {
+                x.Products = StaticData.Products.Where(p => p.BrandId == x.Id).ToList();
+                return x;
+            }).ToArray();
+        }
+
     }
 }

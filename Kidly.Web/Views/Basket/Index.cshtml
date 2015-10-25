@@ -38,7 +38,7 @@
                 <td>
                     <div class="cart-product">
                         <div href="#" title="Remove item" class="btn-remove btn-remove2" ng-click="removeFromBasket(lineItem.product)">Remove item</div>
-                        <a ng-href="~/p/{{lineItem.product.brand}}/{{lineItem.product.ref}}/{{lineItem.product.id}}"
+                        <a ng-href="~/p/{{lineItem.product.brand.name}}/{{lineItem.product.ref}}/{{lineItem.product.id}}"
                            title="{{lineItem.product.name}}" class="product-image">
                             <img ng-src="{{getImage(lineItem.product)}}" width="100" alt="{{lineItem.product.name}}">
                         </a>
@@ -46,7 +46,7 @@
                 </td>
                 <td>
                     <h2 class="product-name">
-                        <a ng-href="~/p/{{lineItem.product.brand}}/{{lineItem.product.ref}}/{{lineItem.product.id}}">{{lineItem.product.name}}</a>
+                        <a ng-href="~/p/{{lineItem.product.brand.name}}/{{lineItem.product.ref}}/{{lineItem.product.id}}">{{lineItem.product.name}}</a>
                     </h2>
                     <p class="sku">Ba_7</p>
                 </td>

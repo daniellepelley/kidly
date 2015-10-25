@@ -427,8 +427,8 @@ button.button.btn-checkout:hover {
 .link-wishlist:hover,
 .add-to-links li a.link-wishlist:hover {
   color: #ffffff;
-  border-color: #61b562;
-  background-color: #61b562;
+  border-color: hotpink;
+  background-color: hotpink;
 }
 /* line 221, theme.less */
 .block-related a.link-wishlist {

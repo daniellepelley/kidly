@@ -14,9 +14,27 @@
         return "http://s7ondemand6.scene7.com//is/image/MothercareASE/dw_badge_template2_new?&$badge2size=1%2C0&$hidetext2=1&$badge1size=1%2C0&$product=MothercareASE%2F" + product.mcId + "_2&$dw_clothingbrowse_mc$";
     };
 
+    $scope.getBrandLogo = function() {
+        return "http://s7ondemand6.scene7.com//is/image/MothercareASE/" + $scope.brand.logoId;
+    };
+
     $scope.addToBasket = function (product) {
         basketService.add(product.id, 1);
         toastr.info(product.name + " added to your basket");
     };
+
+}]);
+
+app.controller("brandsCtrl", ["$scope", "$http", function ($scope, $http) {
+
+
+    $http.get("/api/brands/").then(function (response) {
+        $scope.brands = response.data;
+    });
+
+    $scope.getBrandLogo = function (brand) {
+        return "http://s7ondemand6.scene7.com//is/image/MothercareASE/" + brand.logoId;
+    };
+
 
 }]);

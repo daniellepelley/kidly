@@ -1,11 +1,17 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<div ng-controller="brandsCtrl">
 
-<a class="btn btn-cart" href="b/britax">
-    <h2>Britax</h2>
-</a>
+    <div class="row main-content " ng-cloak>
+        <h2 class="brands-title">Top Brands</h2>
+        <div ng-repeat="brand in brands" class="col-md-3">
+            <a class="btn btn-cart" ng-href="b/{{brand.name}}">
+                <img class="brand-logo" ng-src="{{getBrandLogo(brand)}}" />
+            </a>
+        </div>
+    </div>
+</div>
 
-<a class="btn btn-cart" href="b/bugaboo">
-    <h2>Bugaboo</h2>
-</a>
+
+
