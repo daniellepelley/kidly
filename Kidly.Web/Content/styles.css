@@ -1431,6 +1431,7 @@ tr.summary-details-excluded {
 .product-name {
     font-size: 1em;
     font-weight: normal;
+    height: 50px;
 }
 .product-name a {
     -moz-transition: all 500ms ease;

@@ -16,20 +16,6 @@
                     }
                 });
         },
-        update: function (lineItems) {
-            return $http({
-                url: "/api/basket/update",
-                method: "POST",
-                data: lineItems,
-                headers: {
-                    'Content-Type': 'application/json; charset=UTF-8'
-                }
-            });
-
-
-
-            return $http.post("/api/basket/update", lineItems);
-        },
         clear: function (callBack) {
             return $http.get("/api/basket/clear")
                 .then(function () {

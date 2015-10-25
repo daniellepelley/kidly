@@ -64,11 +64,6 @@
         window.location = "/";
     };
 
-    $scope.updateBasket = function () {
-        basketService.update($scope.lineItems);
-    };
-
-
     populate();
 
 }]);

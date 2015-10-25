@@ -63,17 +63,5 @@ namespace Kidly.Web.Controllers.Api
             StaticData.LineItems.Clear();
             return true;
         }
-
-        [HttpPost]
-        [Route("api/basket/update/")]
-        public void Update(LineItem[] lineItems)
-        {
-
-        }
-
-
     }
-
-   
-
 }

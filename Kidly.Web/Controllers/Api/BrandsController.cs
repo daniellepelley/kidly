@@ -9,7 +9,9 @@ namespace Kidly.Web.Controllers.Api
         [HttpGet]
         public Brand Get(string id)
         {
-            return StaticData.Brands.FirstOrDefault(x => x.Name.ToLowerInvariant() == id.ToLowerInvariant());
+            var brand = StaticData.Brands.FirstOrDefault(x => x.Name.ToLowerInvariant() == id.ToLowerInvariant());
+            brand.Products = StaticData.Products.Where(x => x.BrandId == brand.Id).ToList();
+            return brand;
         }
     }
 }

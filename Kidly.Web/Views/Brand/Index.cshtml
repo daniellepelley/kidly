@@ -48,18 +48,15 @@
                                                         <a ng-href="~/p/{{product.brand}}/{{product.ref}}/{{product.id}}" class="quickshop-link" title="Quickshop">Quickshop</a>
                                                     </div>
                                                 </div>
-                                            </div><!-- /.product-shop-top -->
+                                            </div>
                                             <div class="product-shop">
-                                                <div class="f-fix">
-                                                    <!--product name-->
+                                                <div class="f-fix">                                                 
                                                     <h3 class="product-name">
                                                         <a ng-href="~/p/{{product.brand}}/{{product.ref}}/{{product.id}}" title="{{product.name}}">{{product.name}}</a>
                                                     </h3>
-                                                    <div class="price-box">
-                                                        <span class="regular-price"><span class="medium-price">{{product.price | currency:"£"}}</span> </span>
-
-                                                    </div>
-
+                                                </div>
+                                                <div class="price-box bottom ">
+                                                    <span class="regular-price"><span class="medium-price">{{product.price | currency:"£"}}</span> </span>
                                                 </div>
                                             </div>
                                         </div>
