@@ -41,12 +41,17 @@ namespace Kidly.CanonicalUrls
 
         private void Redirect(IOwinContext context, string urlToRedirect)
         {
-            var queryString = context.Request.QueryString.HasValue
-                ? context.Request.QueryString.Value
+            context.Response.StatusCode = 301;
+            context.Response.Headers.Set("Location", CreateRedirectUrl(context, urlToRedirect));
+        }
+
+        private string CreateRedirectUrl(IOwinContext context, string urlToRedirect)
+        {
+                var queryString = context.Request.QueryString.HasValue
+                ? "?" + context.Request.QueryString.Value
                 : string.Empty;
 
-            context.Response.StatusCode = 301;
-            context.Response.Headers.Set("Location", string.Format("{0}?{1}", urlToRedirect, queryString));
+            return string.Format("{0}{1}", urlToRedirect, queryString);
         }
     }
 }
