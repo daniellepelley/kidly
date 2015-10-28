@@ -171,9 +171,16 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Api\BasketController.cs" />
     <Compile Include="Controllers\Api\BrandsController.cs" />
+    <Compile Include="Data\IProductProvider.cs" />
+    <Compile Include="Framework\IProductUrlBuilder.cs" />
+    <Compile Include="Data\ProductProvider.cs" />
+    <Compile Include="Framework\IProductUrlIdExtractor.cs" />
+    <Compile Include="Framework\ProductUrlBuilder.cs" />
+    <Compile Include="Framework\ProductUrlConverter.cs" />
+    <Compile Include="Framework\ProductUrlIdExtractor.cs" />
     <Compile Include="Models\LineItem.cs" />
     <Compile Include="Controllers\Api\ProductsController.cs" />
-    <Compile Include="Controllers\Api\StaticData.cs" />
+    <Compile Include="Data\StaticData.cs" />
     <Compile Include="Models\Brand.cs" />
     <Compile Include="Controllers\BasketController.cs" />
     <Compile Include="Controllers\BrandController.cs" />

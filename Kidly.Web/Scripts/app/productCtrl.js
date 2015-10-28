@@ -41,5 +41,4 @@
             window.location = "/basket";
         });
     };
-
 }]);

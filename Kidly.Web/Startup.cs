@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.EnterpriseServices;
 using Kidly.CanonicalUrls;
 using Kidly.Web;
+using Kidly.Web.Data;
+using Kidly.Web.Framework;
 using Microsoft.Owin;
 using Owin;
 
@@ -11,13 +14,20 @@ namespace Kidly.Web
     {
         public void Configuration(IAppBuilder app)
         {
-            app.UseCanonicalUrls(new Dictionary<string, string>
-            {
-                { "/home/", "/" },
-                { "/home/index/", "/" },
-                { "/default/", "/" },
-                { "/index/", "/"}
-            });
+            var productUrlConverter = new ProductUrlConverter(
+                new ProductProvider(),
+                new ProductUrlIdExtractor(),
+                new ProductUrlBuilder());
+
+            app.UseCanonicalUrls(x => x
+                .MapUrl("/home/", "/")
+                .MapUrl("/home/index/", "/")
+                .MapUrl("/default/", "/")
+                .MapUrl("/index/", "/")
+                .WithTrailingSlash()
+                .UseLowerCase()
+                .UsingUrlConverter(productUrlConverter));
+
             ConfigureAuth(app);
         }
     }

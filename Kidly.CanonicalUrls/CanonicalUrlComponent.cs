@@ -21,6 +21,12 @@ namespace Kidly.CanonicalUrls
         {
             var owinContext = new OwinContext(environment);
 
+            if (!owinContext.Request.Path.HasValue)
+            {
+                await _appFunc(environment);
+                return;
+            }
+
             var cannonicalPath = _urlConverter.Convert(owinContext.Request.Path.Value);
 
             if (cannonicalPath != owinContext.Request.Path.Value)
@@ -35,8 +41,12 @@ namespace Kidly.CanonicalUrls
 
         private void Redirect(IOwinContext context, string urlToRedirect)
         {
+            var queryString = context.Request.QueryString.HasValue
+                ? context.Request.QueryString.Value
+                : string.Empty;
+
             context.Response.StatusCode = 301;
-            context.Response.Headers.Set("Location", urlToRedirect);
+            context.Response.Headers.Set("Location", string.Format("{0}?{1}", urlToRedirect, queryString));
         }
     }
 }

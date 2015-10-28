@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{DF7C4F
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kidly.CanonicalUrls.Test", "Kidly.CanonicalUrls.Test\Kidly.CanonicalUrls.Test.csproj", "{329DB1BC-BB25-45BE-9965-8132DD1AE066}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,10 @@ Global
 		{2C2AB7FA-2A45-44C7-97AC-32CE34E8B340}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C2AB7FA-2A45-44C7-97AC-32CE34E8B340}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C2AB7FA-2A45-44C7-97AC-32CE34E8B340}.Release|Any CPU.Build.0 = Release|Any CPU
+		{329DB1BC-BB25-45BE-9965-8132DD1AE066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{329DB1BC-BB25-45BE-9965-8132DD1AE066}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{329DB1BC-BB25-45BE-9965-8132DD1AE066}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{329DB1BC-BB25-45BE-9965-8132DD1AE066}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
